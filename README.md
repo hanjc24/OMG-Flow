@@ -15,22 +15,23 @@ committed prefix with flow matching and native **50 Hz** control.
 
 <table>
   <tr>
-    <td align="center" width="33%"><a href="docs/media/flow/dance.mp4"><img src="docs/media/flow/dance.gif" alt="Small steps and gestures" width="100%"></a><br>Small steps and gestures</td>
-    <td align="center" width="33%"><a href="docs/media/flow/turn.mp4"><img src="docs/media/flow/turn.gif" alt="Repeated turns" width="100%"></a><br>Repeated turns</td>
-    <td align="center" width="33%"><a href="docs/media/flow/wave_arms.mp4"><img src="docs/media/flow/wave_arms.gif" alt="Raise and wave arms" width="100%"></a><br>Raise and wave arms</td>
+    <td align="center" width="33%"><a href="docs/media/flow/dance.gif"><img src="docs/media/flow/dance.gif" alt="Small steps and gestures" width="100%"></a><br>Small steps and gestures</td>
+    <td align="center" width="33%"><a href="docs/media/flow/turn.gif"><img src="docs/media/flow/turn.gif" alt="Repeated turns" width="100%"></a><br>Repeated turns</td>
+    <td align="center" width="33%"><a href="docs/media/flow/wave_arms.gif"><img src="docs/media/flow/wave_arms.gif" alt="Raise and wave arms" width="100%"></a><br>Raise and wave arms</td>
   </tr>
   <tr>
-    <td align="center" width="33%"><a href="docs/media/flow/kick.mp4"><img src="docs/media/flow/kick.gif" alt="Low kicks and steps" width="100%"></a><br>Low kicks and steps</td>
-    <td align="center" width="33%"><a href="docs/media/flow/walking_forward.mp4"><img src="docs/media/flow/walking_forward.gif" alt="Walk forward" width="100%"></a><br>Walk forward</td>
-    <td align="center" width="33%"><a href="docs/media/flow/spin.mp4"><img src="docs/media/flow/spin.gif" alt="Spin around" width="100%"></a><br>Spin around</td>
+    <td align="center" width="33%"><a href="docs/media/flow/kick.gif"><img src="docs/media/flow/kick.gif" alt="Low kicks and steps" width="100%"></a><br>Low kicks and steps</td>
+    <td align="center" width="33%"><a href="docs/media/flow/walking_forward.gif"><img src="docs/media/flow/walking_forward.gif" alt="Walk forward" width="100%"></a><br>Walk forward</td>
+    <td align="center" width="33%"><a href="docs/media/flow/spin.gif"><img src="docs/media/flow/spin.gif" alt="Spin around" width="100%"></a><br>Spin around</td>
   </tr>
   <tr>
-    <td align="center" width="33%"><a href="docs/media/flow/side_step.mp4"><img src="docs/media/flow/side_step.gif" alt="Side steps" width="100%"></a><br>Side steps</td>
-    <td align="center" width="33%"><a href="docs/media/flow/crouch_rebound.mp4"><img src="docs/media/flow/crouch_rebound.gif" alt="Crouch and rebound" width="100%"></a><br>Crouch and rebound</td>
+    <td align="center" width="33%"><a href="docs/media/flow/side_step.gif"><img src="docs/media/flow/side_step.gif" alt="Side steps" width="100%"></a><br>Side steps</td>
+    <td align="center" width="33%"><a href="docs/media/flow/crouch_rebound.gif"><img src="docs/media/flow/crouch_rebound.gif" alt="Crouch and rebound" width="100%"></a><br>Crouch and rebound</td>
   </tr>
 </table>
 
-HoloMotion execution in MuJoCo. Click a preview for the full 20-second video.
+HoloMotion execution in MuJoCo. Click a preview to open the full-size GIF.
+Full-size MP4 files are intentionally omitted from the no-LFS branch.
 [Prompts and provenance](docs/media/flow/README.md).
 
 ## 1. Install

@@ -4,21 +4,21 @@ Eight curated clips from the sixteen standing-start runs recorded on November 9,
 2026: 50 Hz control, 0.2 s replanning, TensorRT FP16 Euler-10, P25, 8 Hz suffix
 filter, checkpoint 190,500. These are selected illustrations, not an evaluation sample.
 
-Each MP4 re-renders the complete saved `executed` trajectory: one robot,
-no overlays, camera centered on its pelvis, 480 × 360 at 25 fps, 20 seconds at
-normal speed. GIFs are 8-second excerpts at 320 × 240 and 8 fps. No poses are
-modified and no physics or inference is rerun. Original NPZ bytes are preserved.
+The no-LFS branch omits the eight source MP4 files. GIFs are 8-second excerpts
+at 320 × 240 and 8 fps, generated from the same complete saved `executed`
+trajectories. No poses are modified and no physics or inference is rerun.
+Original NPZ bytes are preserved.
 
 | Clip | Visible motion | GIF start (s) |
 |---|---|---:|
-| [dance](dance.mp4) | Small steps and gestures | 0 |
-| [turn](turn.mp4) | Repeated turns | 0 |
-| [wave_arms](wave_arms.mp4) | Raise and wave arms | 4 |
-| [kick](kick.mp4) | Low kicks and steps | 8 |
-| [walking_forward](walking_forward.mp4) | Walk forward | 8 |
-| [spin](spin.mp4) | Spin around | 4 |
-| [side_step](side_step.mp4) | Side steps | 12 |
-| [crouch_rebound](crouch_rebound.mp4) | Crouch and rebound | 0 |
+| [dance](dance.gif) | Small steps and gestures | 0 |
+| [turn](turn.gif) | Repeated turns | 0 |
+| [wave_arms](wave_arms.gif) | Raise and wave arms | 4 |
+| [kick](kick.gif) | Low kicks and steps | 8 |
+| [walking_forward](walking_forward.gif) | Walk forward | 8 |
+| [spin](spin.gif) | Spin around | 4 |
+| [side_step](side_step.gif) | Side steps | 12 |
+| [crouch_rebound](crouch_rebound.gif) | Crouch and rebound | 0 |
 
 The selection favors visible, varied movement: gestures, turning, arm raises,
 low kicks, forward and lateral steps, rotation, and a crouch/rebound. Captions
