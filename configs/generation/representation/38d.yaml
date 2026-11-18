@@ -1,4 +1,4 @@
-_target_: omg.motion.representation.G1MotionRepresentation
+_target_: omg_flow.motion.representation.G1MotionRepresentation
 stats_path: assets/stats/g1_38d_50hz_hist10_stats.json
 kinematics_path: assets/robots/g1/g1_kinematics.json
 num_prev_states: 10

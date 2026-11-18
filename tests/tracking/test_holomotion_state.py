@@ -3,7 +3,7 @@ from __future__ import annotations
 import mujoco
 import numpy as np
 
-from omg.tracking.holomotion.runtime import (
+from omg_flow.tracking.holomotion.runtime import (
     build_g1_state_handles,
     g1_qvel_from_qpos_pair,
     g1_state_from_qpos_history,

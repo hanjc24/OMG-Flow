@@ -1,4 +1,4 @@
-from omg.benchmarks.report import generation_benchmark_markdown
+from omg_flow.benchmarks.report import generation_benchmark_markdown
 
 
 def test_generation_benchmark_markdown_bolds_best_by_direction():

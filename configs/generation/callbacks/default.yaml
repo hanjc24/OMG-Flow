@@ -6,7 +6,7 @@ checkpoint:
   save_top_k: -1
   save_last: true
 global_step_progress:
-  _target_: omg.callbacks.global_step_progress.GlobalStepProgressBar
+  _target_: omg_flow.callbacks.global_step_progress.GlobalStepProgressBar
 lr_monitor:
   _target_: pytorch_lightning.callbacks.LearningRateMonitor
   requires_logger: true
@@ -14,7 +14,7 @@ lr_monitor:
 grad_norm_monitor: null
 training_diagnostics: null
 divergence_guard:
-  _target_: omg.callbacks.divergence_guard.DivergenceGuard
+  _target_: omg_flow.callbacks.divergence_guard.DivergenceGuard
   dirpath: ${output_dir}/diagnostics
   warmup_steps: 2000
   max_loss: 10.0
@@ -24,4 +24,4 @@ divergence_guard:
   capture_loss_term_grad_norms: false
   norm_type: 2.0
 speed_timer:
-  _target_: omg.callbacks.speed_timer.SpeedTimer
+  _target_: omg_flow.callbacks.speed_timer.SpeedTimer

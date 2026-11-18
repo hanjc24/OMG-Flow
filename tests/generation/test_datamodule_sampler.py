@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from omg.data.datamodule import DistributedWeightedSampler
+from omg_flow.data.datamodule import DistributedWeightedSampler
 
 
 def test_distributed_weighted_sampler_has_equal_rank_lengths(monkeypatch):

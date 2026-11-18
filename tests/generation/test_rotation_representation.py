@@ -1,8 +1,8 @@
 import torch
 
-from omg.motion.feature_codec import G1MotionFeatureCodec
-from omg.robots.g1.kinematics import G1Kinematics
-from omg.utils.rotation_conversions import (
+from omg_flow.motion.feature_codec import G1MotionFeatureCodec
+from omg_flow.robots.g1.kinematics import G1Kinematics
+from omg_flow.utils.rotation_conversions import (
     axis_angle_to_matrix,
     axis_angle_to_quaternion,
     rotation_6d_to_matrix,

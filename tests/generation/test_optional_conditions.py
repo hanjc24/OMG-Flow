@@ -20,7 +20,7 @@ if "omegaconf" not in sys.modules:
     omegaconf.DictConfig = dict
     sys.modules["omegaconf"] = omegaconf
 
-from omg.data.datamodule import motion_collate_fn
+from omg_flow.data.datamodule import motion_collate_fn
 
 
 def _sample(has_audio: bool, has_human_motion: bool):

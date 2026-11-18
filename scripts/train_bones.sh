@@ -10,13 +10,13 @@ export OMP_NUM_THREADS="${OMP_NUM_THREADS:-1}"
 python="${PYTHON:-python}"
 mkdir -p "$FLOW_OUTPUT"
 trainer=("$python" -m torch.distributed.run --standalone --nproc_per_node=4
-         -m omg.cli.generation.train --data "$BONES_DATA" --text-cache "$BONES_TEXT_CACHE"
+         -m omg_flow.cli.generation.train --data "$BONES_DATA" --text-cache "$BONES_TEXT_CACHE"
          --output "$FLOW_OUTPUT")
 if [[ -n "${FLOW_CONFIG:-}" ]]; then trainer+=(--config "$FLOW_CONFIG"); fi
 "$python" - "$BONES_DATA" "$BONES_TEXT_CACHE" <<'PY'
 import hashlib, json, sys
 from pathlib import Path
-from omg.generation.bones_text import BonesTextCache
+from omg_flow.generation.bones_text import BonesTextCache
 root = Path(sys.argv[1])
 manifest = json.loads((root / "manifest.json").read_text())
 if not manifest["complete"]:

@@ -9,7 +9,7 @@ identity. Changing `fps` on the original OMG dataset does not convert it.
 
 Set `OMG_DATA_ROOT` to the native50 source and `OMG_MATERIALIZED_ROOT` to its
 cache parent. `scripts/materialize_omg_data.sh` creates the seq100/history10
-cache. Validate it with `omg.cli.data.validate_episode_cache`.
+cache. Validate it with `omg_flow.cli.data.validate_episode_cache`.
 
 Use `assets/stats/g1_38d_50hz_hist10_stats.json`. Recompute stats when the
 source or window distribution changes. Both dataset readers enforce native50Hz.

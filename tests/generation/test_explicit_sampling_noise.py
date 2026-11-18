@@ -1,8 +1,8 @@
 import pytest
 import torch
 
-from omg.generation.diffusion.forcing import DiffusionForcingProcess
-from omg.generation.diffusion.guided import GuidedDiffusion
+from omg_flow.generation.diffusion.forcing import DiffusionForcingProcess
+from omg_flow.generation.diffusion.guided import GuidedDiffusion
 
 
 class _ZeroDenoiser(torch.nn.Module):

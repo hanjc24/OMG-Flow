@@ -3,8 +3,8 @@ import numpy as np
 import pytest
 import torch
 from omegaconf import OmegaConf
-from omg.callbacks.fixed_motion_eval import fixed_rng, fixed_indices
-from omg.data.datamodule import GenerationDataModule
+from omg_flow.callbacks.fixed_motion_eval import fixed_rng, fixed_indices
+from omg_flow.data.datamodule import GenerationDataModule
 
 
 def test_fixed_rng_repeats_and_preserves_training_stream_even_on_exception():
@@ -42,7 +42,7 @@ def test_pin_memory_option_reaches_real_loader():
 
 def test_three_epoch_schedule_preserves_peak_lr_and_reaches_floor():
     from types import SimpleNamespace
-    from omg.generation.models.motion_generator import MotionGenerator
+    from omg_flow.generation.models.motion_generator import MotionGenerator
     p = torch.nn.Parameter(torch.zeros(1))
     opt = torch.optim.AdamW([p], lr=1e-4)
     cfg = dict(type='linear_warmup_cosine', warmup_steps=250,
@@ -57,7 +57,7 @@ def test_three_epoch_schedule_preserves_peak_lr_and_reaches_floor():
 
 @pytest.mark.parametrize('world', [1,2,3,8])
 def test_balanced_shards_unequal_sizes_have_equal_length_no_duplicates(monkeypatch, world):
-    from omg.data.datamodule import DistributedBalancedShardSampler
+    from omg_flow.data.datamodule import DistributedBalancedShardSampler
     class Unequal(torch.utils.data.Dataset):
         def __len__(self): return 113
         def materialized_shard_spans(self, base_index=0):

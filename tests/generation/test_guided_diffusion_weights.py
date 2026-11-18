@@ -1,6 +1,6 @@
 import torch
 
-from omg.generation.diffusion.guided import GuidedDiffusion
+from omg_flow.generation.diffusion.guided import GuidedDiffusion
 
 
 def test_min_snr_gamma_uses_x0_weighting():

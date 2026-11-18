@@ -5,7 +5,7 @@ import pytest
 import torch
 from torch import nn
 
-from omg.generation.conditions.t5 import FrozenT5TextEncoder
+from omg_flow.generation.conditions.t5 import FrozenT5TextEncoder
 
 
 class Tokenizer:

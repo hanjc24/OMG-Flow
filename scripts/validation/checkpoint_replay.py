@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 
 import numpy as np
-from omg.pipeline.checkpoint import CheckpointPlanner
-from omg.pipeline.cuda_graph import CUDAGraphDenoiser
+from omg_flow.pipeline.checkpoint import CheckpointPlanner
+from omg_flow.pipeline.cuda_graph import CUDAGraphDenoiser
 
 p = argparse.ArgumentParser()
 for name in ["config", "checkpoint", "history", "output"]:

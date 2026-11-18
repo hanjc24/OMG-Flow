@@ -9,8 +9,8 @@ Prepare the fixed test set once from the pinned native50 dataset, then reuse it
 for all checkpoint comparisons:
 
 ```bash
-PYTHONPATH=src python -m omg.cli.evaluation.prepare_samples
-PYTHONPATH=src python -m omg.cli.generation.benchmark \
+PYTHONPATH=src python -m omg_flow.cli.evaluation.prepare_samples
+PYTHONPATH=src python -m omg_flow.cli.generation.benchmark \
   --ckpt_path models/generation/model.ckpt \
   --evaluator_checkpoint models/evaluator/step_007000.pt
 ```

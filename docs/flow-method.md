@@ -27,10 +27,10 @@ From the repository root with the training and data dependencies installed:
 
 ```sh
 export PYTHONPATH=src
-python -m omg.data.bones_prepare --archive /data/source/g1.tar.gz \
+python -m omg_flow.data.bones_prepare --archive /data/source/g1.tar.gz \
   --metadata /data/source/seed_metadata_v004.parquet --root /data/bones
-python -m omg.cli.data.bones_stats --data /data/bones
-python -m omg.cli.data.cache_bones_text --data /data/bones --output /data/bones-text \
+python -m omg_flow.cli.data.bones_stats --data /data/bones
+python -m omg_flow.cli.data.cache_bones_text --data /data/bones --output /data/bones-text \
   --t5 /models/t5-base --device cuda
 ```
 
@@ -56,7 +56,7 @@ The measured batch sweep, prefix ablation and checkpoint checks are recorded in 
 ## Continue an exposed reference
 
 ```python
-from omg.generation.flow_reference import FlowReferenceGenerator
+from omg_flow.generation.flow_reference import FlowReferenceGenerator
 
 generator = FlowReferenceGenerator.from_checkpoint(checkpoint_path, device="cuda")
 suffix = generator.generate_suffix(
@@ -65,4 +65,4 @@ suffix = generator.generate_suffix(
 )
 ```
 
-Inputs are world qpos36 in xyz, wxyz and the OMG G1 joint order. Pass the ten frames immediately preceding the committed prefix. The explicit Gaussian tensor is always shaped `[batch, 100, 38]`. At P=25 the result contains 75 new world-space poses; the caller keeps the original 25 poses in its buffer. The same noise and conditioning reproduce a plan in evaluation mode. Tests cover a second plan made after the history anchor moves. Physical tracking and the quality of the first new frame require separate evaluation. The inherited diffusion reference trainer is available at `omg.cli.generation.train_diffusion`; OMG-Flow checkpoints use the flow generator above.
+Inputs are world qpos36 in xyz, wxyz and the OMG G1 joint order. Pass the ten frames immediately preceding the committed prefix. The explicit Gaussian tensor is always shaped `[batch, 100, 38]`. At P=25 the result contains 75 new world-space poses; the caller keeps the original 25 poses in its buffer. The same noise and conditioning reproduce a plan in evaluation mode. Tests cover a second plan made after the history anchor moves. Physical tracking and the quality of the first new frame require separate evaluation. The inherited diffusion reference trainer is available at `omg_flow.cli.generation.train_diffusion`; OMG-Flow checkpoints use the flow generator above.

@@ -5,7 +5,7 @@ import pytest
 import torch
 from torch import nn
 
-from omg.generation import bones_text
+from omg_flow.generation import bones_text
 
 
 class TinyTextEncoder(nn.Module):

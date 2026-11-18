@@ -3,8 +3,8 @@ import numpy as np
 import pytest
 import torch
 from omegaconf import OmegaConf
-from omg.generation.architecture import apply_checkpoint_architecture_config, build_model_architecture_contract, MODEL_ARCHITECTURE_KEY
-from omg.generation.export.onnx import _ieee_fp32_validation
+from omg_flow.generation.architecture import apply_checkpoint_architecture_config, build_model_architecture_contract, MODEL_ARCHITECTURE_KEY
+from omg_flow.generation.export.onnx import _ieee_fp32_validation
 
 
 def test_checkpoint_config_and_conflicts():

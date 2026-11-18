@@ -1,6 +1,6 @@
 import numpy as np
 
-from omg.benchmarks.metrics import diversity, matching_score, motion_fid, r_precision
+from omg_flow.benchmarks.metrics import diversity, matching_score, motion_fid, r_precision
 
 
 def test_embedding_metrics_smoke():

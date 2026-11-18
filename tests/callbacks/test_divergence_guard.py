@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import pytest
 import torch
 
-from omg.callbacks.divergence_guard import DivergenceGuard
+from omg_flow.callbacks.divergence_guard import DivergenceGuard
 
 
 class TinyModule(torch.nn.Module):

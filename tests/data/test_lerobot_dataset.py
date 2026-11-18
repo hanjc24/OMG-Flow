@@ -11,10 +11,10 @@ import torch
 pa = pytest.importorskip("pyarrow")
 pq = pytest.importorskip("pyarrow.parquet")
 
-from omg.cli.data.materialize_episode_cache import write_episode_cache
-from omg.benchmarks.lerobot import BENCHMARK_SAMPLE_SCHEMA, build_lerobot_benchmark_views
-from omg.data.episode_cache import EpisodeCachedG1MotionDataset
-from omg.data.lerobot_dataset import LeRobotG1MotionDataset, _select_parquet_files_for_index_range
+from omg_flow.cli.data.materialize_episode_cache import write_episode_cache
+from omg_flow.benchmarks.lerobot import BENCHMARK_SAMPLE_SCHEMA, build_lerobot_benchmark_views
+from omg_flow.data.episode_cache import EpisodeCachedG1MotionDataset
+from omg_flow.data.lerobot_dataset import LeRobotG1MotionDataset, _select_parquet_files_for_index_range
 
 TEST_REPO_ID = "example/OMG-Data"
 TEST_REVISION = "1" * 40

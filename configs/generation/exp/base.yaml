@@ -50,10 +50,10 @@ callbacks:
     loss_monitor: diffusion_loss
     warmup_steps: 250
   fixed_validation_rng:
-    _target_: omg.callbacks.fixed_motion_eval.FixedValidationRNG
+    _target_: omg_flow.callbacks.fixed_motion_eval.FixedValidationRNG
     seed: 271828
   fixed_motion_evaluation:
-    _target_: omg.callbacks.fixed_motion_eval.FixedMotionEvaluation
+    _target_: omg_flow.callbacks.fixed_motion_eval.FixedMotionEvaluation
     dirpath: ${output_dir}/fixed_evaluation
     milestone_steps: [16477, 32954, 49431]
     expected_batches_per_epoch: 16477

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import torch
 
-from omg.cli.generation.compute_stats import _update_moments
+from omg_flow.cli.generation.compute_stats import _update_moments
 
 
 def test_update_moments_accumulates_float32_inputs_in_float64() -> None:
@@ -25,7 +25,7 @@ def test_update_moments_accumulates_float32_inputs_in_float64() -> None:
 
 
 def test_compute_stats_allows_an_empty_distributed_partition(monkeypatch) -> None:
-    module = importlib.import_module("omg.cli.generation.compute_stats")
+    module = importlib.import_module("omg_flow.cli.generation.compute_stats")
 
     class EmptyDataset:
         def iter_stats_batches(self, **kwargs):

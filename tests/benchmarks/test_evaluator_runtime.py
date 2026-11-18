@@ -1,9 +1,9 @@
 import torch
 
-from omg.benchmarks.evaluator.motion_encoder import MotionEncoder
-from omg.benchmarks.evaluator.representation import canonical_body_positions_from_qpos
-from omg.benchmarks.evaluator.retrieval import batch_r_precision
-from omg.robots.g1.kinematics import G1Kinematics
+from omg_flow.benchmarks.evaluator.motion_encoder import MotionEncoder
+from omg_flow.benchmarks.evaluator.representation import canonical_body_positions_from_qpos
+from omg_flow.benchmarks.evaluator.retrieval import batch_r_precision
+from omg_flow.robots.g1.kinematics import G1Kinematics
 
 
 def test_batch_r_precision_accepts_explicit_positive_mask():

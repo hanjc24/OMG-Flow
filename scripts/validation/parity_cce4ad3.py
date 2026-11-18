@@ -101,11 +101,11 @@ def main():
     source = args.source.resolve()
     sys.path[:0] = [str(source / "src"), str(source)]
     import torch
-    from omg.generation.flow_reference import FlowReferenceGenerator
-    from omg.generation.bones_text import BonesTextCache
-    from omg.robots.g1.kinematics import G1Kinematics
-    from omg.tracking.holomotion.reference import native_qpos, precompute_reference_features
-    from omg.utils import rotation_conversions as rotations
+    from omg_flow.generation.flow_reference import FlowReferenceGenerator
+    from omg_flow.generation.bones_text import BonesTextCache
+    from omg_flow.robots.g1.kinematics import G1Kinematics
+    from omg_flow.tracking.holomotion.reference import native_qpos, precompute_reference_features
+    from omg_flow.utils import rotation_conversions as rotations
 
     torch.set_num_threads(1)
     torch.backends.cuda.matmul.allow_tf32 = False
@@ -176,8 +176,8 @@ def main():
         prompt=args.prompt, torch=torch.__version__, cuda=torch.version.cuda, numpy=np.__version__,
         tf32=False, rotation_source=rotations.__file__,
         source_files_sha256={name: hashlib.sha256((source / name).read_bytes()).hexdigest() for name in (
-            "src/omg/generation/flow_reference.py", "src/omg/generation/flow.py", "src/omg/utils/rotation_conversions.py",
-            "src/omg/pipeline/checkpoint.py", "src/omg/tracking/holomotion/reference.py")})
+            "src/omg_flow/generation/flow_reference.py", "src/omg_flow/generation/flow.py", "src/omg_flow/utils/rotation_conversions.py",
+            "src/omg_flow/pipeline/checkpoint.py", "src/omg_flow/tracking/holomotion/reference.py")})
     if args.implementation == "runtime":
         receipt["runtime_contract"] = runtime.contract
         receipt["runtime_source_sha256"] = hashlib.sha256((source / "deployment/flow_runtime.py").read_bytes()).hexdigest()

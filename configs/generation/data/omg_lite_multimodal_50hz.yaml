@@ -1,4 +1,4 @@
-_target_: omg.data.datamodule.GenerationDataModule
+_target_: omg_flow.data.datamodule.GenerationDataModule
 limit_each_trainset: null
 train_subset_ratio: null
 rotation_representation: ${representation.rotation_representation}
@@ -6,7 +6,7 @@ dataset_opts:
   train:
     omg_lerobot_train:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${oc.env:OMG_LITE_DATA_ROOT,null}
       repo_id: THU-MARS/OMG-Lite-Data
       revision: 0cf9684b20ed4c4c4762b39256de63f22df62634
@@ -25,7 +25,7 @@ dataset_opts:
   val:
     omg_lerobot_val:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${oc.env:OMG_LITE_DATA_ROOT,null}
       repo_id: THU-MARS/OMG-Lite-Data
       revision: 0cf9684b20ed4c4c4762b39256de63f22df62634
@@ -44,7 +44,7 @@ dataset_opts:
   test:
     omg_lerobot_test:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${oc.env:OMG_LITE_DATA_ROOT,null}
       repo_id: THU-MARS/OMG-Lite-Data
       revision: 0cf9684b20ed4c4c4762b39256de63f22df62634

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 export PYTHONPATH="src:${PYTHONPATH:-}"
-"${PYTHON:-python3}" -m omg.cli.data.materialize_episode_cache \
+"${PYTHON:-python3}" -m omg_flow.cli.data.materialize_episode_cache \
   --data-config configs/generation/data/omg_lite_multimodal_50hz.yaml \
   --representation-config configs/generation/representation/38d.yaml \
   --paths-config configs/generation/paths/default.yaml \

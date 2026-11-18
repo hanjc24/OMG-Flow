@@ -3,8 +3,8 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion import runner as runner_module
-from omg.tracking.holomotion.runner import HoloMotionRolloutRunner
+from omg_flow.tracking.holomotion import runner as runner_module
+from omg_flow.tracking.holomotion.runner import HoloMotionRolloutRunner
 
 
 class _Tracker:

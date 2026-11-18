@@ -67,7 +67,7 @@ def test_rejects_unsafe_preview_and_fractional_tick_period():
 
 
 def test_tracker_features_of_committed_frames_do_not_change():
-    from omg.tracking.holomotion.reference import precompute_reference_features
+    from omg_flow.tracking.holomotion.reference import precompute_reference_features
 
     s = scheduler()
     s.replan(AnalyticGenerator())
@@ -119,7 +119,7 @@ def test_capture_safe_rotation_codec_against_scipy_and_zero_gradient():
     import torch
     from scipy.spatial.transform import Rotation
 
-    from omg.utils.rotation_conversions import axis_angle_to_quaternion, matrix_to_quaternion, quaternion_invert
+    from omg_flow.utils.rotation_conversions import axis_angle_to_quaternion, matrix_to_quaternion, quaternion_invert
 
     vectors = np.array([[0, 0, 0], [1e-9, 0, 0], [0, 1e-6, 0],
                         [0, 0, np.pi], [0.3, -0.5, 1.2]], dtype=np.float64)
@@ -133,7 +133,7 @@ def test_capture_safe_rotation_codec_against_scipy_and_zero_gradient():
 def test_batched_tracker_features_match_scalar_rotation_formulas():
     from scipy.spatial.transform import Rotation
 
-    from omg.tracking.holomotion.reference import (
+    from omg_flow.tracking.holomotion.reference import (
         body_angvel_from_quats, finite_difference, gravity_orientation_wxyz,
         precompute_reference_features, quat_rotate_inv_wxyz,
     )

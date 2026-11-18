@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from omg.generation.flow import MotionFlow
+from omg_flow.generation.flow import MotionFlow
 
 
 def tiny_flow(**kwargs):

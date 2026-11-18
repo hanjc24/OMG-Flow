@@ -3,8 +3,8 @@ from __future__ import annotations
 import torch
 import torch.nn.functional as F
 
-from omg.motion.feature_codec import G1MotionFeatureCodec
-from omg.robots.g1.kinematics import G1Kinematics
+from omg_flow.motion.feature_codec import G1MotionFeatureCodec
+from omg_flow.robots.g1.kinematics import G1Kinematics
 
 
 def _sample_qpos(batch_shape: tuple[int, ...]) -> torch.Tensor:

@@ -1,7 +1,7 @@
 # Configuration
 
 - Flow training: [configs/flow/bones.yaml](../configs/flow/bones.yaml), consumed by
-  `omg.cli.generation.train` / `make train`.
+  `omg_flow.cli.generation.train` / `make train`.
 - Deployment: [deployment/sync_flow.json](../deployment/sync_flow.json), consumed
   by `deployment.run_sync` / `make deploy`. Set local checkpoint, T5 and tracker
   paths. Defaults are 50 Hz, 0.2 s replanning, P25, Euler-10, TensorRT FP16 and

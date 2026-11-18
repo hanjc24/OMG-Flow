@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from omg.benchmarks.artifacts import GENERATED_KEYS, verify_schema
-from omg.benchmarks.runners.artifact import _validate_generated
+from omg_flow.benchmarks.artifacts import GENERATED_KEYS, verify_schema
+from omg_flow.benchmarks.runners.artifact import _validate_generated
 
 
 @pytest.mark.parametrize('fps', [25.0, 60.0, float('nan')])

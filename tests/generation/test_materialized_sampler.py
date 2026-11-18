@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from torch.utils.data import Dataset
 
-from omg.data.datamodule import DistributedMaterializedShardSampler
+from omg_flow.data.datamodule import DistributedMaterializedShardSampler
 
 
 class FakeMaterializedDataset(Dataset):

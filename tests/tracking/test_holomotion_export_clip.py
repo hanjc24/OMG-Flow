@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion.export_clip import (
+from omg_flow.tracking.holomotion.export_clip import (
     HoloMotionClipExportConfig,
     build_holomotion_deployment_clip,
     export_holomotion_deployment_clip,

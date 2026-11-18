@@ -107,8 +107,8 @@ def main() -> int:
 
     sys.path.insert(0, str(_repo_root() / "src"))
     _install_lightweight_import_fallbacks()
-    from omg.generation.denoisers.transformer import MotionTransformerDenoiser
-    from omg.generation.models.motion_generator import MotionGenerator
+    from omg_flow.generation.denoisers.transformer import MotionTransformerDenoiser
+    from omg_flow.generation.models.motion_generator import MotionGenerator
 
     if args.device == "auto":
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -6,7 +6,7 @@ OMG-Flow uses the producer's G1 CSV archive and v004 metadata from revision `2f5
 hf download bones-studio/seed --repo-type dataset \
   --revision 2f59b2077b9da34dd4e43618e705c7cb962c9a66 \
   g1.tar.gz metadata/seed_metadata_v004.parquet --local-dir "$RAW"
-python -m omg.data.bones_prepare --archive "$RAW/g1.tar.gz" \
+python -m omg_flow.data.bones_prepare --archive "$RAW/g1.tar.gz" \
   --metadata "$RAW/metadata/seed_metadata_v004.parquet" --root "$DATA"
 ```
 

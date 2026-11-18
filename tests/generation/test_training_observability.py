@@ -2,7 +2,7 @@ from types import SimpleNamespace
 import pytest
 import torch
 import pytorch_lightning as pl
-from omg.generation.models.motion_generator import MotionGenerator
+from omg_flow.generation.models.motion_generator import MotionGenerator
 
 @pytest.mark.parametrize('device', ['cpu', pytest.param('cuda', marks=pytest.mark.skipif(not torch.cuda.is_available(), reason='CUDA required'))])
 def test_diagnostic_transfer_preserves_bits_shapes_and_integer_precision(device):

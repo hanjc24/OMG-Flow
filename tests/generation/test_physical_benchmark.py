@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 import torch
 
-from omg.cli.generation.physical_benchmark import load_motion_qpos
-from omg.generation.metrics import body_jerk_mean, contact_sliding_speed, foot_ground_error
+from omg_flow.cli.generation.physical_benchmark import load_motion_qpos
+from omg_flow.generation.metrics import body_jerk_mean, contact_sliding_speed, foot_ground_error
 
 
 def test_contact_sliding_speed_measures_contact_interval_xy_speed():

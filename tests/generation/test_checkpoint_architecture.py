@@ -4,12 +4,12 @@ from types import SimpleNamespace
 
 import pytest
 
-from omg.generation.architecture import (
+from omg_flow.generation.architecture import (
     MODEL_ARCHITECTURE_KEY,
     build_model_architecture_contract,
     validate_checkpoint_architecture_contract,
 )
-from omg.generation.models.motion_generator import MotionGenerator
+from omg_flow.generation.models.motion_generator import MotionGenerator
 
 
 def _model(*, self_qk_norm: bool, cross_qk_norm: bool):

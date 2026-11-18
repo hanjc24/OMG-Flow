@@ -1,6 +1,6 @@
 import torch
 
-from omg.generation.denoisers.transformer import (
+from omg_flow.generation.denoisers.transformer import (
     MotionTransformerBlock,
     RotarySelfAttention,
     _qk_normalized_cross_attention,

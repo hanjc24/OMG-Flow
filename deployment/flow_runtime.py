@@ -10,7 +10,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from omg.generation.flow_reference import FlowReferenceGenerator
+from omg_flow.generation.flow_reference import FlowReferenceGenerator
 
 
 def filter_suffix(window, history, prefix, cutoff_hz):
@@ -63,13 +63,13 @@ class FlowRuntime(nn.Module):
         }
         if text_tokens is None and self.reference.model.text_proj is not None:
             if config.get("text_cache"):
-                from omg.generation.bones_text import BonesTextCache
+                from omg_flow.generation.bones_text import BonesTextCache
 
                 cache = BonesTextCache(config["text_cache"], verify_files=True)
                 text_tokens, text_mask = cache.lookup([config["prompt"]])
                 self.contract["text_cache_signature"] = cache.signature
             else:
-                from omg.generation.conditions.t5 import FrozenT5TextEncoder
+                from omg_flow.generation.conditions.t5 import FrozenT5TextEncoder
 
                 model_path = Path(config["text_encoder"]).expanduser().resolve(strict=True)
                 encoder = FrozenT5TextEncoder(str(model_path), max_length=50, frozen_eval=True).to(device).eval()
@@ -129,7 +129,7 @@ class FlowRuntime(nn.Module):
         torch.cuda.synchronize()
 
     def forward(self, history_qpos, committed_qpos, noise, *, precision=None, use_trt=True):
-        from omg.data.bones import encode_bones_window
+        from omg_flow.data.bones import encode_bones_window
 
         ref = self.reference
         known = encode_bones_window(torch.cat([history_qpos, committed_qpos], dim=1),
@@ -149,8 +149,8 @@ class FlowRuntime(nn.Module):
 
     def decode(self, suffix):
         import torch.nn.functional as F
-        from omg.motion.feature_codec import heading_quaternions
-        from omg.utils.rotation_conversions import (
+        from omg_flow.motion.feature_codec import heading_quaternions
+        from omg_flow.utils.rotation_conversions import (
             matrix_to_quaternion, quaternion_apply, quaternion_multiply, rotation_6d_to_matrix,
         )
 
@@ -243,7 +243,7 @@ def main():
             sub.add_argument("--iterations", type=int, default=100)
     args = parser.parse_args()
     if args.command == "text-cache":
-        from omg.generation.bones_text import prepare_cache
+        from omg_flow.generation.bones_text import prepare_cache
 
         prepare_cache(args.prompt, args.output, args.text_encoder, args.device, batch_size=1)
         return

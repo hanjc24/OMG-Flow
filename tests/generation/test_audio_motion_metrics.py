@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from omg.benchmarks.metrics import (
+from omg_flow.benchmarks.metrics import (
     aistpp_edge_features,
     aistpp_edge_metric_summary,
     beat_align_from_beats,

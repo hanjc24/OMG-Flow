@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 from scipy.spatial.transform import Rotation
 
-from omg.tracking.holomotion.reference import (
+from omg_flow.tracking.holomotion.reference import (
     build_holomotion_obs,
     current_robot_obs_terms,
     future_indices,

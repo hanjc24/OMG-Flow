@@ -1,4 +1,4 @@
-_target_: omg.generation.diffusion.guided.GuidedDiffusion
+_target_: omg_flow.generation.diffusion.guided.GuidedDiffusion
 timesteps: 1000
 objective: pred_x0
 beta_schedule: cosine

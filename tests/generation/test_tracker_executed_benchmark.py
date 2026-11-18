@@ -5,7 +5,7 @@ import argparse
 import numpy as np
 import pytest
 
-from omg.benchmarks.runners.tracker_executed import (
+from omg_flow.benchmarks.runners.tracker_executed import (
     _pad_sequence_list,
     _select_tracker_indices,
     _tracker_metric_values,

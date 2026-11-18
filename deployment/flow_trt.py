@@ -45,9 +45,9 @@ class FlowTRT:
             "inputs": {name: {"shape": list(value.shape), "dtype": str(value.dtype)}
                        for name, value in self.inputs.items()},
             "source_sha256": {name: hashlib.sha256((Path(__file__).resolve().parents[1] / name).read_bytes()).hexdigest()
-                              for name in ("deployment/flow_trt.py", "src/omg/generation/flow.py",
-                                           "src/omg/generation/denoisers/transformer.py",
-                                           "src/omg/generation/conditions/position.py")},
+                              for name in ("deployment/flow_trt.py", "src/omg_flow/generation/flow.py",
+                                           "src/omg_flow/generation/denoisers/transformer.py",
+                                           "src/omg_flow/generation/conditions/position.py")},
             "opset": 18, "workspace_bytes": 4 << 30,
         }
         key = hashlib.sha256(json.dumps(self.contract, sort_keys=True).encode()).hexdigest()

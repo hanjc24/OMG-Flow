@@ -16,9 +16,9 @@ if "hydra" not in sys.modules:
     sys.modules["hydra"] = hydra
     sys.modules["hydra.utils"] = hydra_utils
 
-from omg.generation.conditions.position import SinusoidalPositionEncoding
-from omg.generation.denoisers.transformer import MotionTransformerDenoiser
-from omg.generation.models.motion_generator import MotionGenerator
+from omg_flow.generation.conditions.position import SinusoidalPositionEncoding
+from omg_flow.generation.denoisers.transformer import MotionTransformerDenoiser
+from omg_flow.generation.models.motion_generator import MotionGenerator
 
 
 class DummyRepresentation:

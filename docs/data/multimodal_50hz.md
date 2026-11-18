@@ -18,7 +18,7 @@ exact snapshot; set it to an existing snapshot directory to work offline.
 export OMG_LITE_DATA_ROOT=/path/to/OMG-Lite-Data
 export OMG_MATERIALIZED_ROOT=/path/to/cache
 bash scripts/materialize_omg_lite_multimodal.sh --splits train val test --device cpu
-python -m omg.cli.data.validate_episode_cache \
+python -m omg_flow.cli.data.validate_episode_cache \
   "$OMG_MATERIALIZED_ROOT/omg_lite_multimodal_50hz_v3_seq100_hist10_k1" \
   --splits train val test
 ```
@@ -41,14 +41,14 @@ its original stats. To recompute the new statistics:
 
 ```bash
 export OMG_LITE_MULTIMODAL_STATS=/path/to/g1_38d_multimodal_50hz_stats.json
-python -m omg.cli.generation.compute_stats \
+python -m omg_flow.cli.generation.compute_stats \
   --data-config configs/generation/data/omg_lite_multimodal_50hz_cached.yaml \
   --representation-config configs/generation/representation/38d.yaml \
   --paths-config configs/generation/paths/default.yaml \
   --split train --device cuda --batch-size 1024 \
   --output "$OMG_LITE_MULTIMODAL_STATS"
 python -m torch.distributed.run --standalone --nproc_per_node=8 \
-  -m omg.cli.generation.train_diffusion exp=multimodal_50hz
+  -m omg_flow.cli.generation.train_diffusion exp=multimodal_50hz
 ```
 
 The new preset enables audio and human reference, retains 38D/50Hz and diffusion-only
@@ -72,9 +72,9 @@ multimodal checkpoint. `loss=fk` remains an explicit opt-in.
 - Source frame offsets remain in source 30Hz units; episode lengths and dataset
   offsets are updated to the 50Hz grid.
 
-Rebuild using `python -m omg.cli.data.resample_release --source ... --dest ...
+Rebuild using `python -m omg_flow.cli.data.resample_release --source ... --dest ...
 --source-hashes ...`, with `provenance/source_file_sha256.json` from the public snapshot.
-Then run `python -m omg.cli.data.validate_resampled_release --source ... --target ...`.
+Then run `python -m omg_flow.cli.data.validate_resampled_release --source ... --target ...`.
 The validator checks every frame, episode boundary, quaternion interpolation,
 action, condition, mask, timestamp and retained metadata. Resume verifies completed
 shard hashes; never resume a conversion after changing its resampling algorithm.

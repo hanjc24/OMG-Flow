@@ -7,9 +7,9 @@ import numpy as np
 import pytest
 import torch
 
-from omg.data.episode_cache import EpisodeCachedG1MotionDataset
-from omg.data.episode_cache_inspect import inspect_episode_cache
-from omg.cli.data.materialize_episode_cache import write_episode_cache
+from omg_flow.data.episode_cache import EpisodeCachedG1MotionDataset
+from omg_flow.data.episode_cache_inspect import inspect_episode_cache
+from omg_flow.cli.data.materialize_episode_cache import write_episode_cache
 
 SOURCE_REPO_ID = "THU-MARS/OMG-Data"
 SOURCE_REVISION = "test-revision"

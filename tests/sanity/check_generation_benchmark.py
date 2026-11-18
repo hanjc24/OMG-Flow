@@ -20,7 +20,7 @@ def _command(args: argparse.Namespace) -> list[str]:
     cmd = [
         sys.executable,
         "-m",
-        "omg.cli.generation.benchmark",
+        "omg_flow.cli.generation.benchmark",
         "--exp",
         args.exp,
         "--ckpts",

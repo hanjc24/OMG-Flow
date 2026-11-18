@@ -8,9 +8,9 @@ from time import perf_counter_ns
 
 import numpy as np
 
-from omg.robots.g1.constants import G1_JOINT_NAMES
-from omg.tracking.holomotion.reference import build_holomotion_obs, precompute_reference_features
-from omg.tracking.holomotion.runtime import (
+from omg_flow.robots.g1.constants import G1_JOINT_NAMES
+from omg_flow.tracking.holomotion.reference import build_holomotion_obs, precompute_reference_features
+from omg_flow.tracking.holomotion.runtime import (
     HoloMotionTrackerSession, build_g1_state_handles, build_holomotion_handles,
     build_onnx_session, extract_g1_qpos, load_holomotion_metadata, set_g1_state,
 )

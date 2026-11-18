@@ -4,8 +4,8 @@ import mujoco
 import numpy as np
 import pytest
 
-from omg.render import mujoco as render
-from omg.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos
+from omg_flow.render import mujoco as render
+from omg_flow.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos
 
 URDF = 'assets/robots/g1/g1_29dof.urdf'
 

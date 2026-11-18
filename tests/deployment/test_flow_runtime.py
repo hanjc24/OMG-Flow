@@ -7,10 +7,10 @@ import torch
 
 from deployment.flow_runtime import FlowRuntime, filter_suffix
 from deployment.sync_flow import SyncScheduler
-from omg.data.bones import encode_bones_window
-from omg.generation.flow import MotionFlow
-from omg.generation.flow_reference import FlowReferenceGenerator
-from omg.utils.rotation_conversions import axis_angle_to_quaternion
+from omg_flow.data.bones import encode_bones_window
+from omg_flow.generation.flow import MotionFlow
+from omg_flow.generation.flow_reference import FlowReferenceGenerator
+from omg_flow.utils.rotation_conversions import axis_angle_to_quaternion
 
 
 @pytest.fixture
@@ -75,8 +75,8 @@ def test_request_validation(inputs):
 
 
 def test_cache_load_without_t5_and_checksum(tmp_path, monkeypatch):
-    from omg.generation.bones_text import BonesTextCache, MAX_TOKENS, HIDDEN_DIM, T5_REVISION, T5_SHA256
-    from omg.generation.conditions.t5 import FrozenT5TextEncoder
+    from omg_flow.generation.bones_text import BonesTextCache, MAX_TOKENS, HIDDEN_DIM, T5_REVISION, T5_SHA256
+    from omg_flow.generation.conditions.t5 import FrozenT5TextEncoder
 
     def forbidden(*args, **kwargs):
         pytest.fail("cache loading must not instantiate T5")

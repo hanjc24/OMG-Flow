@@ -1,4 +1,4 @@
-_target_: omg.data.datamodule.GenerationDataModule
+_target_: omg_flow.data.datamodule.GenerationDataModule
 limit_each_trainset: null
 train_subset_ratio: null
 rotation_representation: ${representation.rotation_representation}
@@ -6,7 +6,7 @@ dataset_opts:
   train:
     omg_50hz_train:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.episode_cache.EpisodeCachedG1MotionDataset
+      _target_: omg_flow.data.episode_cache.EpisodeCachedG1MotionDataset
       root: ${paths.materialized_root}/omg_lite_multimodal_50hz_v3_seq100_hist10_k1
       source_repo_id: THU-MARS/OMG-Lite-Data
       source_revision: 0cf9684b20ed4c4c4762b39256de63f22df62634
@@ -14,7 +14,7 @@ dataset_opts:
   val:
     omg_50hz_val:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.episode_cache.EpisodeCachedG1MotionDataset
+      _target_: omg_flow.data.episode_cache.EpisodeCachedG1MotionDataset
       root: ${paths.materialized_root}/omg_lite_multimodal_50hz_v3_seq100_hist10_k1
       source_repo_id: THU-MARS/OMG-Lite-Data
       source_revision: 0cf9684b20ed4c4c4762b39256de63f22df62634
@@ -22,7 +22,7 @@ dataset_opts:
   test:
     omg_50hz_test:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.episode_cache.EpisodeCachedG1MotionDataset
+      _target_: omg_flow.data.episode_cache.EpisodeCachedG1MotionDataset
       root: ${paths.materialized_root}/omg_lite_multimodal_50hz_v3_seq100_hist10_k1
       source_repo_id: THU-MARS/OMG-Lite-Data
       source_revision: 0cf9684b20ed4c4c4762b39256de63f22df62634

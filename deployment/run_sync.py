@@ -90,8 +90,8 @@ def render_video(robot, reference, executed, replans, ticks, path, period, *, sh
     import imageio.v2 as imageio
     import mujoco
 
-    from omg.tracking.holomotion.runtime import set_g1_qpos
-    from omg.tracking.holomotion.video import draw_overlay
+    from omg_flow.tracking.holomotion.runtime import set_g1_qpos
+    from omg_flow.tracking.holomotion.video import draw_overlay
 
     data = mujoco.MjData(robot.model)
     camera = mujoco.MjvCamera()

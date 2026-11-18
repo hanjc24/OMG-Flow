@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion.video import camera_azimuth, draw_overlay, yaw_degrees_from_wxyz
+from omg_flow.tracking.holomotion.video import camera_azimuth, draw_overlay, yaw_degrees_from_wxyz
 
 
 def test_camera_azimuth_views():

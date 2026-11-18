@@ -1,10 +1,10 @@
 import pytest
 import torch
 
-from omg.data.bones import encode_bones_window
-from omg.generation.flow import MotionFlow
-from omg.generation.flow_reference import FlowReferenceGenerator
-from omg.utils.rotation_conversions import (
+from omg_flow.data.bones import encode_bones_window
+from omg_flow.generation.flow import MotionFlow
+from omg_flow.generation.flow_reference import FlowReferenceGenerator
+from omg_flow.utils.rotation_conversions import (
     axis_angle_to_quaternion,
     quaternion_apply,
     quaternion_multiply,
@@ -89,7 +89,7 @@ def test_second_plan_keeps_raw_committed_reference_and_rebases_at_new_history(tm
 
 
 def test_replan_seam_probe_compares_matching_times_and_excludes_both_splice_stencils():
-    from omg.generation.flow_seam import replan_seam_metrics
+    from omg_flow.generation.flow_seam import replan_seam_metrics
 
     # Quadratic joint motion has 1 rad/s² acceleration; the second plan's
     # 0.02 rad splice adds 50 rad/s² and then subtracts it on the next stencil.

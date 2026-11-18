@@ -16,7 +16,7 @@ it does not replace the licenses of third-party assets or external datasets.
   Copyright (c) 2016–2022 HangZhou YuShu TECHNOLOGY CO.,LTD.
   [BSD-3-Clause](licenses/Unitree-LICENSE). The URDF and derived kinematic metadata
   are adapted for this project's joint representation.
-- **Rotation conversions:** `src/omg/utils/rotation_conversions.py` retains its
+- **Rotation conversions:** `src/omg_flow/utils/rotation_conversions.py` retains its
   Facebook/PyTorch3D and NVIDIA copyright headers and `BSD-3-Clause AND Apache-2.0`
   SPDX identifier. See [PyTorch3D BSD terms](licenses/PyTorch3D-LICENSE) and
   [Apache-2.0 terms](licenses/HoloMotion-LICENSE).

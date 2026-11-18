@@ -5,9 +5,9 @@ import torch
 from hydra import compose, initialize_config_dir
 from hydra.utils import instantiate
 
-from omg.motion.feature_codec import G1MotionFeatureCodec
-from omg.robots.g1.kinematics import G1Kinematics
-from omg.utils.rotation_conversions import axis_angle_to_quaternion
+from omg_flow.motion.feature_codec import G1MotionFeatureCodec
+from omg_flow.robots.g1.kinematics import G1Kinematics
+from omg_flow.utils.rotation_conversions import axis_angle_to_quaternion
 
 
 def pose_features():
@@ -78,7 +78,7 @@ def test_default_and_opt_in_fk_configuration_and_backward():
 
 
 def test_diffusion_only_step_does_not_decode_fk(monkeypatch):
-    from omg.generation.models.motion_generator import MotionGenerator
+    from omg_flow.generation.models.motion_generator import MotionGenerator
     config_dir = Path(__file__).resolve().parents[2] / "configs/generation"
     with initialize_config_dir(config_dir=str(config_dir), version_base=None):
         cfg = compose(config_name="train")
@@ -119,7 +119,7 @@ def test_only_pose38_codec_options_are_accepted():
 
 def test_statistics_reject_other_frame_rates(tmp_path):
     import json
-    from omg.motion.representation import G1MotionRepresentation
+    from omg_flow.motion.representation import G1MotionRepresentation
     stats = json.loads(Path("assets/stats/g1_38d_50hz_hist10_stats.json").read_text())
     stats["fps"] = 25
     path = tmp_path / "wrong_rate.json"
@@ -129,7 +129,7 @@ def test_statistics_reject_other_frame_rates(tmp_path):
 
 
 def test_retired_body_consistency_cannot_be_enabled():
-    from omg.generation.losses.motion import MotionLoss
+    from omg_flow.generation.losses.motion import MotionLoss
     import pytest
     with pytest.raises(ValueError, match="consistency loss is not supported"):
         MotionLoss(body_pos_consistency=1.0)

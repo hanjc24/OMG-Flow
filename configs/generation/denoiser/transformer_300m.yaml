@@ -1,4 +1,4 @@
-_target_: omg.generation.denoisers.transformer.MotionTransformerDenoiser
+_target_: omg_flow.generation.denoisers.transformer.MotionTransformerDenoiser
 input_dim: ${representation.feat_dim}
 hidden_dim: 1152
 num_layers: 14

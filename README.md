@@ -49,6 +49,9 @@ Use `make install-cn` for China mainland networks. RTX 5090:
 `make venv VENV_PYTHON=3.11` then `make install-blackwell`.
 See [environment details](docs/flow-method.md#install).
 
+The Python distribution is named `omg-flow`; Python imports use the
+`omg_flow` namespace so this package can coexist with OMG-Lite's `omg` package.
+
 ## 2. Prepare BONES-SEED
 
 Obtain [BONES-SEED](https://huggingface.co/datasets/bones-studio/seed) under its
@@ -56,10 +59,10 @@ Obtain [BONES-SEED](https://huggingface.co/datasets/bones-studio/seed) under its
 [pinned T5-base snapshot](https://huggingface.co/google-t5/t5-base/tree/a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1).
 
 ```bash
-python -m omg.data.bones_prepare --archive data/source/g1.tar.gz \
+python -m omg_flow.data.bones_prepare --archive data/source/g1.tar.gz \
   --metadata data/source/seed_metadata_v004.parquet --root data/bones
-python -m omg.cli.data.bones_stats --data data/bones
-python -m omg.cli.data.cache_bones_text --data data/bones \
+python -m omg_flow.cli.data.bones_stats --data data/bones
+python -m omg_flow.cli.data.cache_bones_text --data data/bones \
   --output data/bones-text --t5 /models/t5-base --device cuda
 ```
 

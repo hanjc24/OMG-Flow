@@ -32,7 +32,7 @@ FLOW_DATA ?= data/bones
 FLOW_TEXT_CACHE ?= data/bones-text
 FLOW_OUTPUT ?= outputs/bones-flow
 FLOW_ARGS := --data "$(FLOW_DATA)" --text-cache "$(FLOW_TEXT_CACHE)" --output "$(FLOW_OUTPUT)"
-FLOW_TRAIN := PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m torch.distributed.run --standalone --nproc_per_node=$(FLOW_DEVICES) -m omg.cli.generation.train
+FLOW_TRAIN := PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m torch.distributed.run --standalone --nproc_per_node=$(FLOW_DEVICES) -m omg_flow.cli.generation.train
 
 train:
 	$(FLOW_TRAIN) $(FLOW_ARGS) $(TRAIN_ARGS)

@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from omg.cli.data.resample_release import coordinates, interpolate, resample_conditions
+from omg_flow.cli.data.resample_release import coordinates, interpolate, resample_conditions
 
 
 def test_grid_and_slerp_do_not_cross_episodes():
@@ -51,7 +51,7 @@ def test_public_release_cli_round_trip(tmp_path, monkeypatch):
     import sys
     import pyarrow as pa
     import pyarrow.parquet as pq
-    from omg.cli.data import resample_release, validate_resampled_release
+    from omg_flow.cli.data import resample_release, validate_resampled_release
 
     source = tmp_path / "source"
     target = tmp_path / "target"

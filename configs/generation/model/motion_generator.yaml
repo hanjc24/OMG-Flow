@@ -1,11 +1,11 @@
-_target_: omg.generation.models.motion_generator.MotionGenerator
+_target_: omg_flow.generation.models.motion_generator.MotionGenerator
 _recursive_: false
 representation: ${representation}
 denoiser: ${denoiser}
 diffusion: ${diffusion}
 loss: ${loss}
 text_encoder:
-  _target_: omg.generation.conditions.t5.FrozenT5TextEncoder
+  _target_: omg_flow.generation.conditions.t5.FrozenT5TextEncoder
   model_name: ${paths.models_root}/t5-base-local
   max_length: 50
   output_dim: 768

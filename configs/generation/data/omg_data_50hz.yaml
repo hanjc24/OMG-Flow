@@ -1,4 +1,4 @@
-_target_: omg.data.datamodule.GenerationDataModule
+_target_: omg_flow.data.datamodule.GenerationDataModule
 limit_each_trainset: null
 train_subset_ratio: null
 rotation_representation: ${representation.rotation_representation}
@@ -6,7 +6,7 @@ dataset_opts:
   train:
     omg_lerobot_train:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${paths.data_root}
       repo_id: local/OMG-Data-50Hz
       revision: sha256:ff4243bdc4dd1fb242ca9419cd99080329300de55bb7b70a417ca5055e8a843e
@@ -25,7 +25,7 @@ dataset_opts:
   val:
     omg_lerobot_val:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${paths.data_root}
       repo_id: local/OMG-Data-50Hz
       revision: sha256:ff4243bdc4dd1fb242ca9419cd99080329300de55bb7b70a417ca5055e8a843e
@@ -44,7 +44,7 @@ dataset_opts:
   test:
     omg_lerobot_test:
       include_body_positions: ${representation.include_body_positions}
-      _target_: omg.data.lerobot_dataset.LeRobotG1MotionDataset
+      _target_: omg_flow.data.lerobot_dataset.LeRobotG1MotionDataset
       dataset_root: ${paths.data_root}
       repo_id: local/OMG-Data-50Hz
       revision: sha256:ff4243bdc4dd1fb242ca9419cd99080329300de55bb7b70a417ca5055e8a843e

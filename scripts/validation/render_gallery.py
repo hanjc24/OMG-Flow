@@ -11,7 +11,7 @@ import imageio_ffmpeg
 import mujoco
 import numpy as np
 
-from omg.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos
+from omg_flow.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos
 
 
 def main():

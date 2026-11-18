@@ -7,7 +7,7 @@ import pytest
 import torch
 from hydra import compose, initialize_config_dir
 
-from omg.benchmarks.runners.common import (
+from omg_flow.benchmarks.runners.common import (
     SampleRecord,
     _cfg_output_name,
     _dataset_indices,
@@ -18,9 +18,9 @@ from omg.benchmarks.runners.common import (
     _write_sample_records,
     select_condition_records,
 )
-from omg.benchmarks.metrics import multimodality
-from omg.benchmarks.protocol import benchmark_condition_cohorts, benchmark_source_datasets
-from omg.benchmarks.runners.text import (
+from omg_flow.benchmarks.metrics import multimodality
+from omg_flow.benchmarks.protocol import benchmark_condition_cohorts, benchmark_source_datasets
+from omg_flow.benchmarks.runners.text import (
     _parse_args,
     _real_motion_metrics,
     _reference_records,
@@ -300,7 +300,7 @@ def test_gt_summary_and_per_sample_retrieval_share_candidates(seed):
 
 def test_pinned_reference_never_resamples(monkeypatch):
     from argparse import Namespace
-    from omg.benchmarks.runners import text
+    from omg_flow.benchmarks.runners import text
     rows = [object(), object()]
     monkeypatch.setattr(text, "_load_sample_records", lambda path: rows)
     monkeypatch.setattr(text, "_resolve_sample_records", lambda records, datasets: records)
@@ -315,7 +315,7 @@ def test_pinned_reference_never_resamples(monkeypatch):
 
 
 def test_native_text_protocol_defaults(tmp_path):
-    from omg.cli.evaluation.prepare_samples import _parse_args as prepare_args, _output_name
+    from omg_flow.cli.evaluation.prepare_samples import _parse_args as prepare_args, _output_name
     evaluator = tmp_path / "evaluator.pt"
     evaluator.touch()
     args = _parse_args(["--ckpt_path", "model.ckpt", "--evaluator_checkpoint", str(evaluator)])

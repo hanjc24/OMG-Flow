@@ -1,7 +1,7 @@
 import torch
 
-from omg.generation.losses.motion import _masked_element_mean, _rotation_chordal_sq
-from omg.utils.rotation_conversions import axis_angle_to_matrix
+from omg_flow.generation.losses.motion import _masked_element_mean, _rotation_chordal_sq
+from omg_flow.utils.rotation_conversions import axis_angle_to_matrix
 
 
 def test_masked_element_mean_counts_trailing_event_dimensions():

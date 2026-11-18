@@ -3,8 +3,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion.io import load_reference_motion
-from omg.tracking.holomotion.reference import native_qpos
+from omg_flow.tracking.holomotion.io import load_reference_motion
+from omg_flow.tracking.holomotion.reference import native_qpos
 
 
 def _qpos(frames: int = 4) -> np.ndarray:

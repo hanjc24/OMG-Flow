@@ -1,4 +1,4 @@
-_target_: omg.generation.losses.motion.MotionLoss
+_target_: omg_flow.generation.losses.motion.MotionLoss
 simple_root_pos: 0.0
 simple_root_rot: 0.0
 simple_joint_dof: 0.0

@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion.reference import native_qpos
+from omg_flow.tracking.holomotion.reference import native_qpos
 
 
 def test_native_motion_validates_at_tracking_boundary_and_copies():

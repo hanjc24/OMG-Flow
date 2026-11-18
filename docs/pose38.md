@@ -17,7 +17,7 @@ through joint rotations and root pose; no generated body-position channels or
 body-position consistency branch are used.
 
 Use `assets/stats/g1_38d_50hz_hist10_stats.json` for the pinned training data.
-Recompute normalization with `omg.cli.generation.compute_stats` when the source
+Recompute normalization with `omg_flow.cli.generation.compute_stats` when the source
 or window distribution changes. The committed stats preserve their source
 content hash and channel provenance. Checkpoints must match the model config
 and normalization; dimensions are checked at load time.

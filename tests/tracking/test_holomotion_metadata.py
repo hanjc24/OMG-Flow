@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from omg.tracking.holomotion.runtime import (
+from omg_flow.tracking.holomotion.runtime import (
     HoloMotionTrackerSession,
     infer_holomotion_obs_contract,
     infer_holomotion_obs_schema,

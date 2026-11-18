@@ -28,8 +28,8 @@ def main():
     torch.set_num_threads(1)
     if args.stage == 'generate':
         import pyarrow.parquet as pq
-        from omg.generation.bones_text import BonesTextCache
-        from omg.generation.flow_reference import FlowReferenceGenerator
+        from omg_flow.generation.bones_text import BonesTextCache
+        from omg_flow.generation.flow_reference import FlowReferenceGenerator
         clips = pq.read_table(Path(args.data) / 'clips.parquet').to_pylist()
         captions = json.loads((Path(args.data) / 'captions.json').read_text())
         rows = [sorted([r for r in clips if r['split'] == 'test' and r['frames'] >= 110
@@ -83,8 +83,8 @@ def main():
         (out / 'manifest.json').write_text(json.dumps(records, indent=2))
     elif args.stage == 'track':
         import onnxruntime as ort
-        from omg.tracking.holomotion.runner import HoloMotionRolloutRunner
-        from omg.tracking.holomotion.runtime import g1_state_from_qpos_history
+        from omg_flow.tracking.holomotion.runner import HoloMotionRolloutRunner
+        from omg_flow.tracking.holomotion.runtime import g1_state_from_qpos_history
         record = json.loads((out / 'manifest.json').read_text())
         options = ort.SessionOptions()
         options.intra_op_num_threads = 1
@@ -137,7 +137,7 @@ def main():
         import cv2
         import imageio.v2 as imageio
         import mujoco
-        from omg.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos, resolve_robot_xml
+        from omg_flow.tracking.holomotion.runtime import build_g1_state_handles, set_g1_qpos, resolve_robot_xml
         model = mujoco.MjModel.from_xml_path(str(resolve_robot_xml(None)))
         data = mujoco.MjData(model)
         handles = build_g1_state_handles(model)

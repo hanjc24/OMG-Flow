@@ -4,9 +4,9 @@ import torch
 import torch.nn as nn
 import pytest
 
-from omg.generation.denoisers.transformer import _rotate_half
-from omg.generation.conditions.position import SinusoidalPositionEncoding
-from omg.generation.export import (
+from omg_flow.generation.denoisers.transformer import _rotate_half
+from omg_flow.generation.conditions.position import SinusoidalPositionEncoding
+from omg_flow.generation.export import (
     DenoiserStepExportModel,
     build_export_metadata,
     validate_export_wrapper_parity,
@@ -163,7 +163,7 @@ def test_build_export_metadata_contract():
 
 
 def test_export_cli_contract_format():
-    from omg.cli.generation.export_onnx import _format_contract
+    from omg_flow.cli.generation.export_onnx import _format_contract
 
     text = _format_contract(
         {
@@ -196,8 +196,8 @@ def test_tensorrt_compatible_denoiser_matches_transformer_attention(
     self_qk_norm: bool,
     cross_qk_norm: bool,
 ):
-    from omg.generation.denoisers.transformer import MotionTransformerDenoiser, RotarySelfAttention
-    from omg.generation.export.onnx import (
+    from omg_flow.generation.denoisers.transformer import MotionTransformerDenoiser, RotarySelfAttention
+    from omg_flow.generation.export.onnx import (
         TensorRTFriendlyMultiheadAttention,
         TensorRTFriendlyRotarySelfAttention,
         make_tensorrt_compatible_denoiser,

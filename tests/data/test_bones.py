@@ -5,10 +5,10 @@ import pandas as pd
 import pytest
 import torch
 
-from omg.data.bones import BonesWindows, encode_bones_window
-from omg.data.bones_prepare import CSV_COLUMNS, convert_g1_csv
-from omg.motion.feature_codec import G1MotionFeatureCodec
-from omg.robots.g1.kinematics import G1Kinematics
+from omg_flow.data.bones import BonesWindows, encode_bones_window
+from omg_flow.data.bones_prepare import CSV_COLUMNS, convert_g1_csv
+from omg_flow.motion.feature_codec import G1MotionFeatureCodec
+from omg_flow.robots.g1.kinematics import G1Kinematics
 
 
 def test_native50_grid_units_joint_order_and_shortest_orientation():
@@ -89,7 +89,7 @@ def test_publication_requires_complete_compressed_source(tmp_path, monkeypatch):
     import io
     import tarfile
 
-    from omg.data import bones_prepare
+    from omg_flow.data import bones_prepare
 
     n = 13
     columns = {key: np.zeros(n) for key in CSV_COLUMNS}
@@ -123,8 +123,8 @@ def test_publication_requires_complete_compressed_source(tmp_path, monkeypatch):
 
 
 def test_stats_use_only_full_train_windows(tmp_path):
-    from omg.cli.data.bones_stats import compute
-    from omg.data.bones import encode_bones_window
+    from omg_flow.cli.data.bones_stats import compute
+    from omg_flow.data.bones import encode_bones_window
 
     rng = np.random.default_rng(42)
     poses = rng.normal(size=(250, 36)).astype("<f4")
